@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Employee Task List View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="EmployeeTaskListViewController" customModule="SmallBiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="180" translatesAutoresizingMaskIntoConstraints="NO" id="juE-DI-TGg">
+                                <rect key="frame" x="20.5" y="52" width="373" height="34"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a new task" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nyk-XS-GLG">
+                                        <rect key="frame" x="0.0" y="0.0" width="149.5" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2w0-Fv-IpA">
+                                        <rect key="frame" x="329.5" y="0.0" width="43.5" height="34"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" image="plus" catalog="system"/>
+                                        <connections>
+                                            <action selector="addTaskButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oBc-Me-76f"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vDd-s8-1zH">
+                                <rect key="frame" x="0.0" y="102" width="414" height="760"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="taskCell" id="PZ8-Uu-F5x" customClass="TaskTableViewCell" customModule="SmallBiz" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="49.5" width="374" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PZ8-Uu-F5x" id="Iex-mN-6fd">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="byE-MI-cEa">
+                                                    <rect key="frame" x="8" y="16" width="336.5" height="64"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2V-AH-8Ok">
+                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="64"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="f1I-4l-btw"/>
+                                                                <constraint firstAttribute="width" constant="40" id="tDV-5S-ouh"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain" image="circle" catalog="system">
+                                                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
+                                                            </buttonConfiguration>
+                                                            <connections>
+                                                                <action selector="doneButtonTapped:" destination="PZ8-Uu-F5x" eventType="touchUpInside" id="2DJ-IK-WAp"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbK-ka-9Yx">
+                                                            <rect key="frame" x="48" y="0.0" width="288.5" height="64"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="byE-MI-cEa" firstAttribute="top" secondItem="Iex-mN-6fd" secondAttribute="top" constant="16" id="K5r-07-bfx"/>
+                                                <constraint firstItem="byE-MI-cEa" firstAttribute="leading" secondItem="Iex-mN-6fd" secondAttribute="leading" constant="8" id="dzQ-xR-J4W"/>
+                                                <constraint firstItem="byE-MI-cEa" firstAttribute="width" secondItem="Iex-mN-6fd" secondAttribute="width" multiplier="0.9" id="hFS-4a-Q8g"/>
+                                                <constraint firstAttribute="bottom" secondItem="byE-MI-cEa" secondAttribute="bottom" id="qZl-79-68O"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="taskButton" destination="W2V-AH-8Ok" id="7LS-Ys-pTg"/>
+                                            <outlet property="taskTitleLabel" destination="KbK-ka-9Yx" id="5q2-FS-g3u"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDd-s8-1zH" firstAttribute="top" secondItem="juE-DI-TGg" secondAttribute="bottom" constant="16" id="CDA-kI-tmL"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="vDd-s8-1zH" secondAttribute="bottom" id="EJ6-wI-tof"/>
+                            <constraint firstItem="juE-DI-TGg" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.9" id="HWH-xf-q6O"/>
+                            <constraint firstItem="vDd-s8-1zH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ICt-Pj-2UX"/>
+                            <constraint firstItem="juE-DI-TGg" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="bap-Qn-Usx"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vDd-s8-1zH" secondAttribute="trailing" id="kP1-Gj-rZr"/>
+                            <constraint firstItem="juE-DI-TGg" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="l4I-OO-ZId"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="employeeTableView" destination="vDd-s8-1zH" id="7T4-Wh-fOo"/>
+                        <outlet property="taskTextField" destination="Nyk-XS-GLG" id="XSW-Uq-9nC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="129" y="80"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="circle" catalog="system" width="128" height="121"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
