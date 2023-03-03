@@ -31,7 +31,11 @@ class EmployeesListViewController: UIViewController {
     @IBAction func addEmployeeButtonTapped(_ sender: Any) {
         guard let newEmployee = addEmployeeTextField.text, !newEmployee.isEmpty else { return }
         let newEmployeeName = newEmployee.components(separatedBy: " ")
-        EmployeeController.shared.addEmployee(firstName: newEmployeeName[0], LastName: newEmployeeName[1])
+        if newEmployeeName.count == 2 {
+            EmployeeController.shared.addEmployee(firstName: newEmployeeName[0], LastName: newEmployeeName[1])
+        } else if newEmployeeName.count == 1 {
+            EmployeeController.shared.addEmployee(firstName: newEmployeeName[0], LastName: " ")
+        }
         addEmployeeTextField.text = ""
         employeeTableView.reloadData()
     }

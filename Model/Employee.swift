@@ -14,7 +14,7 @@ class Employee: Codable {
     var id: String
     var tasks: [Task]
     
-    init (firstName: String, lastName: String, skillLevel: Int = 1, id: String = UUID().uuidString, tasks: [Task] = []){
+    init (firstName: String = "", lastName: String = "", skillLevel: Int = 1, id: String = UUID().uuidString, tasks: [Task] = []){
         self.firstName = firstName
         self.lastName = lastName
         self.skillLevel = skillLevel
